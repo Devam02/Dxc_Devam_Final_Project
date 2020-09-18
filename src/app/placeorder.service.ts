@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlaceorderService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  placeorder(rupees,paise,RFirstname,Lastname,Address,city,State,pincode,country,Bfirstname,LastName,cc,cc2,email)
+  placeorder(placeorderdata)
   {
-    alert(rupees)
-    alert(paise)
+    
+    return this.http.post('/api/authenticate', JSON.stringify(placeorderdata));
   }
 }

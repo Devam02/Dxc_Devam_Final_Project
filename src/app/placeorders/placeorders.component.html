@@ -12,14 +12,14 @@
     <div class="container h-100">
       <div class="d-flex justify-content-center h-100">
           <div class="user_card">
-              <form >
+              <form  #f="ngForm" (ngSubmit)=" placeorder(f.value)" >
                   <label for="exampleInputPassword1"><b>Gift Card Amount :</b></label>
                   <div class="form-group">
                     <input type="text" class="form-control" id="rupya" aria-describedby="amount" placeholder="Rupees" style="float:left;width:100px;margin-right: 10px;"
                      ngModel name="rupya" #rupya="ngModel" class="form-control input_user" (change)=appen(rupya)>
 
                     <input type="text" class="form-control" id="paisa" aria-describedby="amount" placeholder="Paise" style=" width:100px;margin-right: 10px;"
-                     ngModel name="paisa" #paisa="ngModel"  (change)=appen(paisa)>
+                     ngModel name="paisa" #paisa="ngModel"  (change)=appen(paisa)   >
                   </div>
 
                   <label for="exampleInputPassword1"><b>Recipient Name</b></label>
@@ -67,7 +67,7 @@
                   </div>
                   <br>
                   <br>
-                  <button type="submit" class="btn btn-dark" (click)="placeorder()">Submit</button>
+                  <button type="submit" class="btn btn-dark" >Submit</button>
                 </form>
           </div>
       </div>

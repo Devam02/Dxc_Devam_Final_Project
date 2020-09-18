@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,5 +12,8 @@ export class ThankyoupageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
+  
 
 }

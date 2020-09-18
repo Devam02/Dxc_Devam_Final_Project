@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -6,14 +7,12 @@ import { Injectable } from '@angular/core';
 })
 export class RegisterService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  register(username,email,password,confirmpassword){
+  register(credentials){
 
-    alert(username);
-    alert(email);
-    alert(password);
-    alert(confirmpassword);
+    
+    return this.http.post('/api/authenticate', JSON.stringify(credentials))
 
 
   }

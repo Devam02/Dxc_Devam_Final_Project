@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vieworders.component.css']
 })
 export class ViewordersComponent implements OnInit {
+  posts:any[];
 
-  constructor() { }
+  constructor(http:HttpClient) { 
+    http.get('http://jsonplaceholder.typicode.com/posts')
+    .subscribe(response=>{
+
+      console.log(response)
+
+
+
+    });
+  }
 
   ngOnInit(): void {
   }
