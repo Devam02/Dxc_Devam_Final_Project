@@ -1,18 +1,24 @@
+
+
+
+
+
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
-
+  constructor(private http:HttpClient ) { }
+cred:Object;
   login(username,password)
   {
-    alert(username)
-    alert(password)
-    
-  //Login ka code 
+    this.cred= {"username": username ,"password":password}
+    return this.http.post(
+      '/api/authenticate', JSON.stringify(this.cred))      
   }
 
   logout()

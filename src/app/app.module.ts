@@ -2,6 +2,7 @@ import { PlaceorderService } from './placeorder.service';
 import { RegisterService } from './register.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { registerLocaleData } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { AuthService } from './auth.service';
 import { FormsModule } from '@angular/forms';
+import { from } from 'rxjs';
 
 
 @NgModule({
@@ -37,6 +39,7 @@ import { FormsModule } from '@angular/forms';
   BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path:'aboutproduct', component: AboutproductComponent},
       {path:'login', component: LoginComponent},
@@ -50,7 +53,10 @@ import { FormsModule } from '@angular/forms';
   providers: [
     AuthService,
     RegisterService,
-    PlaceorderService
+    PlaceorderService,
+    RouterModule,
+    HttpClientModule
+    
   ],
   bootstrap: [AppComponent]
 })
