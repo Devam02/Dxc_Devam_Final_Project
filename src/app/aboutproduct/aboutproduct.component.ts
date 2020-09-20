@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-aboutproduct',
@@ -7,9 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutproductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
+
+    
+   
+    
+    
+    
+  }
+  about(){
+
+    var about_object=JSON.stringify('token')
+
+    if(about_object.length==4)
+    {
+       this.route.navigate(['/login'])
+
+    }
+    else
+    {
+      this.route.navigate(['/placeorder'])
+    }
+
   }
 
 }

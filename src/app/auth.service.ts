@@ -17,8 +17,8 @@ cred:Object;
   login(username,password)
   {
     this.cred= {"username": username ,"password":password}
-    return this.http.post(
-      '/api/authenticate', JSON.stringify(this.cred))      
+    return this.http.get(
+      'https://my-json-server.typicode.com/Devam02/FakeServer/users?id='+username+'&&name='+password )      
   }
 
   logout()

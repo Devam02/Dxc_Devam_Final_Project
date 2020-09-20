@@ -8,10 +8,19 @@ import { PlaceorderService } from '../placeorder.service';
   styleUrls: ['./placeorders.component.css']
 })
 export class PlaceordersComponent implements OnInit {
+
+  
  
   constructor(private porder:PlaceorderService ,private router:Router) { }
  
   ngOnInit(): void {
+    var result_object=JSON.stringify(localStorage.getItem('token'))
+
+    if(result_object.length==4)
+    {
+      this.router.navigate(['/login'])
+    }
+    
   }
   
   arr=[]
@@ -19,6 +28,7 @@ export class PlaceordersComponent implements OnInit {
   {
     this.arr.push(a)
   }
+  
  
   
   
