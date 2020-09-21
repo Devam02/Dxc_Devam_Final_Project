@@ -12,6 +12,8 @@ export class ThankyoupageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+
 
   
   

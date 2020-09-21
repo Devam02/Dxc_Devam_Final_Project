@@ -47,7 +47,8 @@ import { from } from 'rxjs';
       {path:'login', component: LoginComponent},
       {path:'register', component: RegisterComponent},
       {path:'placeorder', component: PlaceordersComponent},
-      {path:'vieworders', component: ViewordersComponent}
+      {path:'vieworders', component: ViewordersComponent},
+      {path:'thankyou',component:ThankyoupageComponent}
       
     ])
 

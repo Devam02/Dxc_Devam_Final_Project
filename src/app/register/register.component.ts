@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
   constructor(private reg:RegisterService,private router:Router) { }
   arr=[];
   registerdata:Object
+  register_data:any
 
   ngOnInit(): void {
   }
@@ -24,8 +25,12 @@ export class RegisterComponent implements OnInit {
   register()
   {
     this.registerdata={"username" :this.arr[0].viewModel,"email":this.arr[1].viewModel,"password":this.arr[2].viewModel,"ConfirmPassword":this.arr[3].viewModel}
-   this.reg.register(this.registerdata);
-   this.router.navigate(['/login']);
+   this.reg.register(this.registerdata).subscribe(response=>{
+    this.register_data=response
+    console.log(this.register_data);
+    this.router.navigate(['/login']) 
+  })
+
   }
 
 
